@@ -10,8 +10,11 @@ public class Jogo {
 	private int index;
 	private char letra;
 	private int acertou = 0;
-	
+	private int chances = 6;
+
 	public void executar() {
+		System.out.println("\t\t******JOGO DA FORCA******\n\n");
+       
 		String palavra = geraPalavra();
 		
 		acertos = new char [palavra.length()];
@@ -27,25 +30,34 @@ public class Jogo {
 				if(palavra.charAt(index) == letra) {
 					acertos[index] = letra;
 					acertou++;
-				} System.out.print(acertos[index] + " ");
+				}	
+			
+				System.out.print(acertos[index] + " ");
+			}	
+			
+			if (acertou == palavra.length()) { //Se o número de acertos é igual ao numero de letras, ganha o jogo.
+				System.out.println("\n\n***Você Ganhou***");
+				break;
 			}
+			
+			System.out.println("   ( São " + palavra.length() +" letras - Você tem: " + chances + " chances )");
 		}
 	}
 	
 	private String geraPalavra() {
 		Random gerador = new Random();
-		
-		int index = gerador.nextInt(6);
-		String palavra = palavras[index];
-		
+		//int index = gerador.nextInt(6);
+		//String palavra = palavras[index];
+		String palavra = palavras[gerador.nextInt(palavras.length)]; //Parece mais simples, não?
 		return palavra;
 	}
 
 	public char recebeletra() {
 		Scanner in = new Scanner(System.in);
 		
-		System.out.println("Informe uma letra: ");
-		letra = in.next().charAt(0);
+		System.out.println("\nInforme uma letra: ");
+		//letra = in.next().charAt(0);
+		letra = in.next().toUpperCase().charAt(0); //UpperCase para colocar as letras em caixa alta, caso contrario, não identifica acerto se estiver em caixa baixa.
 		
 		return letra;
 	}
