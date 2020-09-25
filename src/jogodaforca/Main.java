@@ -9,7 +9,7 @@ public class Main {
 		Scanner entradaNome = new Scanner(System.in);
 		Jogador jogador = new Jogador();
 		System.out.println("\t\t****** JOGO DA FORCA ******\n\n");
-		System.out.print("\nOlá, digite seu nome para começar: "); //Apenas recebe o nome
+		System.out.print("\nOlá, digite seu nome para começar: "); 
 		jogador.setNome(entradaNome.nextLine());
 		
 		Jogo j = new Jogo();
@@ -17,8 +17,8 @@ public class Main {
 		j.executar();
 		
 		System.out.println("\n\n*** VOCÊ GANHOU " + jogador.getNome() + "! ***");
-		System.out.println("\nVocê utilizou as letras: " + j.getLetrasUtilizadas());
-		System.out.println("\nVocê errou " + j.getErros() +  " vezes");
+		System.out.println("\nA palavra era: " + j.getPalavra());
+		System.out.println("\nVocê errou " + j.getErros() +  " vezes"); //Falta Criar
 		System.out.println("\nQuer jogar novamente? S/N"); // Falta Criar.
 
 		

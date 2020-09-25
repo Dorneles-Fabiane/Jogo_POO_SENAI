@@ -13,10 +13,12 @@ public class Jogo {
 	private int acertou = 0;
 	private int chances = 6; //verificar!!
 	private String letrasUtilizadas = "";
+	private String palavra;
+
 	
 	public void executar() {
        
-		String palavra = geraPalavra();
+		palavra = geraPalavra();
 		acertos = new char [palavra.length()];
 		
 		for (int c= 0; c < palavra.length(); c++) {
@@ -59,8 +61,8 @@ public class Jogo {
 	private String geraPalavra() {
 		Random gerador = new Random();
 		int index = gerador.nextInt(6);
-		String palavra = palavras[index];
-		//String palavra = palavras[gerador.nextInt(palavras.length)]; //Parece mais simples, não?
+		palavra = palavras[index];
+		//palavra = palavras[gerador.nextInt(palavras.length)]; //Parece mais simples, não?
 		return palavra;
 	}
 
@@ -96,33 +98,15 @@ public class Jogo {
 	}
 
 
-	public String getLetrasUtilizadas() {
-		return letrasUtilizadas;
-	}
-
-
-	public void setLetrasUtilizadas(String letrasUtilizadas) {
-		this.letrasUtilizadas = letrasUtilizadas;
-	}
-
-
 	public int getErros() {
 		return erros;
 	}
 
 
-	public void setErros(int erros) {
-		this.erros = erros;
+
+	public String getPalavra() {
+		return palavra;
 	}
-	
-	
-	
-
-
-
-	
-	
-
 
 	
 	

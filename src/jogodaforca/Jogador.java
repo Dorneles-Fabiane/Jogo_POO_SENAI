@@ -2,7 +2,7 @@ package jogodaforca;
 
 public class Jogador {
 	
-	private String nome; // adicionado nome.
+	private String nome; // adicionado nome
 	
 	
 	public String getNome() {
