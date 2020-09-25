@@ -10,7 +10,7 @@ public class Jogo {
 	private int index;
 	private char letra;
 	private int acertou = 0;
-	private int chances = 6; //faltou criar "if (letra != sorteada.charAt(i)) { chances -= 1;
+	private int chances = 6; 
 	private String letrasUtilizadas = "";
 	
 	public void executar() {
@@ -30,6 +30,7 @@ public class Jogo {
 				if(palavra.charAt(index) == letra) {
 					acertos[index] = letra;
 					acertou++;
+					
 				}	
 			
 				System.out.print(acertos[index] + " ");
@@ -40,6 +41,8 @@ public class Jogo {
 				System.out.println("\n\n***Você Ganhou***");
 				break;
 			}
+			
+			
 			letrasUtilizadas += " " + letra + " -";
 			System.out.println("   ( São " + palavra.length() +" letras - Você tem: " + chances + " chances )");
 			System.out.println("\nLetras Utilizadas: " + letrasUtilizadas);
