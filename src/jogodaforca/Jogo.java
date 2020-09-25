@@ -14,7 +14,6 @@ public class Jogo {
 	private String letrasUtilizadas = "";
 	
 	public void executar() {
-		System.out.println("\t\t******JOGO DA FORCA******\n\n");
        
 		String palavra = geraPalavra();
 		
@@ -88,6 +87,28 @@ public class Jogo {
 	public void setLetra(char letra) {
 		this.letra = letra;
 	}
+
+
+	public int getChances() {
+		return chances;
+	}
+
+
+	public void setChances(int chances) {
+		this.chances = chances;
+	}
+
+
+	public String getLetrasUtilizadas() {
+		return letrasUtilizadas;
+	}
+
+
+	public void setLetrasUtilizadas(String letrasUtilizadas) {
+		this.letrasUtilizadas = letrasUtilizadas;
+	}
+
+	
 	
 
 }
