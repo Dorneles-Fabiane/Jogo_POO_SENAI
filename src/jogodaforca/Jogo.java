@@ -9,6 +9,7 @@ public class Jogo {
 	private char[] acertos;
 	private int index;
 	private char letra;
+	private int erros = 0;
 	private int acertou = 0;
 	private int chances = 6; //verificar!!
 	private String letrasUtilizadas = "";
@@ -16,12 +17,12 @@ public class Jogo {
 	public void executar() {
        
 		String palavra = geraPalavra();
-		
 		acertos = new char [palavra.length()];
 		
 		for (int c= 0; c < palavra.length(); c++) {
 			acertos[c] = '_';
 			}
+		
 		
 		while (acertou != palavra.length()) {
 			recebeletra();
@@ -35,27 +36,31 @@ public class Jogo {
 			
 				System.out.print(acertos[index] + " ");
 				
+				
+				
 			}	
 			
 			if (acertou == palavra.length()) { //Se o número de acertos é igual ao numero de letras, ganha o jogo.
 				break;
 			}
+	
 			
-			
-			letrasUtilizadas += " " + letra + " -";
+			letrasUtilizadas += " " + letra + " ";
 			System.out.println("   ( São " + palavra.length() +" letras - Você tem: " + chances + " chances )");
 			System.out.println("\nLetras Utilizadas: " + letrasUtilizadas);
 			
 		}
+		
+		
 		
 	}
 	
 	
 	private String geraPalavra() {
 		Random gerador = new Random();
-		//int index = gerador.nextInt(6);
-		//String palavra = palavras[index];
-		String palavra = palavras[gerador.nextInt(palavras.length)]; //Parece mais simples, não?
+		int index = gerador.nextInt(6);
+		String palavra = palavras[index];
+		//String palavra = palavras[gerador.nextInt(palavras.length)]; //Parece mais simples, não?
 		return palavra;
 	}
 
@@ -91,16 +96,6 @@ public class Jogo {
 	}
 
 
-	public int getChances() {
-		return chances;
-	}
-
-
-	public void setChances(int chances) {
-		this.chances = chances;
-	}
-
-
 	public String getLetrasUtilizadas() {
 		return letrasUtilizadas;
 	}
@@ -109,6 +104,25 @@ public class Jogo {
 	public void setLetrasUtilizadas(String letrasUtilizadas) {
 		this.letrasUtilizadas = letrasUtilizadas;
 	}
+
+
+	public int getErros() {
+		return erros;
+	}
+
+
+	public void setErros(int erros) {
+		this.erros = erros;
+	}
+	
+	
+	
+
+
+
+	
+	
+
 
 	
 	
