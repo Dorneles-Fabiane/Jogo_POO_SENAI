@@ -38,7 +38,6 @@ public class Jogo {
 			}	
 			
 			if (acertou == palavra.length()) { //Se o número de acertos é igual ao numero de letras, ganha o jogo.
-				System.out.println("\n\n***Você Ganhou***");
 				break;
 			}
 			

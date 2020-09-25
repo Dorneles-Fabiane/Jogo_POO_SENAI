@@ -16,6 +16,9 @@ public class Main {
 		
 		j.executar();
 		
+		System.out.println("\n\n***Você Ganhou " + jogador.getNome() + " ***");
+
+		
 			
 
 	}
