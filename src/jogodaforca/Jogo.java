@@ -10,7 +10,7 @@ public class Jogo {
 	private int index;
 	private char letra;
 	private int acertou = 0;
-	private int chances = 6; 
+	private int chances = 6; //verificar!!
 	private String letrasUtilizadas = "";
 	
 	public void executar() {
