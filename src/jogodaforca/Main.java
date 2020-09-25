@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		
+				
 		Scanner entradaNome = new Scanner(System.in);
 		Jogador jogador = new Jogador();
 		System.out.println("\t\t****** JOGO DA FORCA ******\n\n");
@@ -18,7 +18,7 @@ public class Main {
 		
 		System.out.println("\n\n*** VOCÊ GANHOU " + jogador.getNome() + "! ***");
 		System.out.println("\nA palavra era: " + j.getPalavra());
-		System.out.println("\nVocê errou " + j.getErros() +  " vezes"); //Falta Criar
+		System.out.println("\nVocê errou " + j.getErros() +  " vezes"); //Falta Criar.
 		System.out.println("\nQuer jogar novamente? S/N"); // Falta Criar.
 
 		

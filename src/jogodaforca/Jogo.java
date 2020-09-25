@@ -4,18 +4,21 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Jogo {
+	
+	//VARIAVEIS
 	private String[] palavras = {"AMOR", "CACHORRO", "CINEMA", "CASA", 
 			"ALGORITMO", "SABADO", "PIPA"};
 	private char[] acertos;
 	private int index;
 	private char letra;
-	private int erros = 0;
+	private int erros = 0; //verificar!!
 	private int acertou = 0;
 	private int chances = 6; //verificar!!
 	private String letrasUtilizadas = "";
 	private String palavra;
-
 	
+	
+	//EXECUÇÃO
 	public void executar() {
        
 		palavra = geraPalavra();
@@ -36,13 +39,11 @@ public class Jogo {
 					
 				}	
 			
-				System.out.print(acertos[index] + " ");
-				
-				
+				System.out.print(acertos[index] + " ");				
 				
 			}	
 			
-			if (acertou == palavra.length()) { //Se o número de acertos é igual ao numero de letras, ganha o jogo.
+			if (acertou == palavra.length()) { //Se o número de acertos é igual ao numero de letras, ganha o jogo
 				break;
 			}
 	
@@ -51,10 +52,8 @@ public class Jogo {
 			System.out.println("   ( São " + palavra.length() +" letras - Você tem: " + chances + " chances )");
 			System.out.println("\nLetras Utilizadas: " + letrasUtilizadas);
 			
-		}
-		
-		
-		
+		}	
+			
 	}
 	
 	
@@ -76,6 +75,8 @@ public class Jogo {
 		return letra;
 	}
 	
+	
+	//Get AND SET
 	public String[] getPalavras() {
 		return palavras;
 	}
@@ -101,7 +102,6 @@ public class Jogo {
 	public int getErros() {
 		return erros;
 	}
-
 
 
 	public String getPalavra() {
