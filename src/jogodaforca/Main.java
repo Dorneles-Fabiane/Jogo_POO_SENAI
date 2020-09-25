@@ -16,7 +16,9 @@ public class Main {
 		
 		j.executar();
 		
-		System.out.println("\n\n***Você Ganhou " + jogador.getNome() + " ***");
+		System.out.println("\n\n*** VOCÊ GANHOU " + jogador.getNome() + "! ***");
+		
+		System.out.println("\nQuer jogar novamente? S/N"); // Falta Criar.
 
 		
 			

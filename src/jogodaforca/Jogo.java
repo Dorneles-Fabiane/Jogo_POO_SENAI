@@ -64,7 +64,7 @@ public class Jogo {
 		
 		System.out.println("Informe uma letra: ");
 		//letra = in.next().charAt(0);
-		letra = in.next().toUpperCase().charAt(0); //UpperCase para colocar as letras em caixa alta, caso contrario, não identifica acerto se estiver em caixa baixa.
+		letra = in.next().toUpperCase().charAt(0); //UpperCase para colocar as letras em caixa alta, caso contrario, não identifica acerto se estiver em caixa baixa
 
 		return letra;
 	}
