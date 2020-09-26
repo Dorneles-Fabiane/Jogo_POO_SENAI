@@ -8,14 +8,14 @@ public class Jogo {
 	//VARIAVEIS
 	private String[] palavras = {"AMOR", "CACHORRO", "CINEMA", "CASA", 
 			"ALGORITMO", "SABADO", "PIPA"};
-	private char[] acertos;
+
+	Jogador jogador = new Jogador();
 	private int index;
 	private char letra;
-	private int erros = 0; //verificar!!
-	private int acertou = 0;
-	private int chances = 6; //verificar!!
 	private String letrasUtilizadas = "";
 	private String palavra;
+	private char[] acertos;
+	private int acertou = 0;
 	
 	
 	//EXECUÇÃO
@@ -49,7 +49,7 @@ public class Jogo {
 	
 			
 			letrasUtilizadas += " " + letra + " ";
-			System.out.println("   ( São " + palavra.length() +" letras - Você tem: " + chances + " chances )");
+			System.out.println("   ( São " + palavra.length() +" letras - Você tem: " + jogador.getChances() + " chances )");
 			System.out.println("\nLetras Utilizadas: " + letrasUtilizadas);
 			
 		}	
@@ -99,14 +99,10 @@ public class Jogo {
 	}
 
 
-	public int getErros() {
-		return erros;
-	}
-
-
 	public String getPalavra() {
 		return palavra;
 	}
+	
 
 	
 	

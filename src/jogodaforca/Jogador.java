@@ -1,16 +1,31 @@
 package jogodaforca;
 
-public class Jogador {
+//HERANÇA -> EXTENDS PESSOA
+public class Jogador extends Pessoa { 
 	
-	private String nome; // adicionado nome.
+	
+
+	private int chances = 6; //verificar!!
+	private int erros = 0; //verificar!!
 	
 	
-	public String getNome() {
-		return nome;
+	
+	// METODOS ESPECIAIS
+
+	public int getChances() {
+		return chances;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setChances(int chances) {
+		this.chances = chances;
 	}
+	public int getErros() {
+		return erros;
+	}
+	public void setErros(int erros) {
+		this.erros = erros;
+	}
+
+	
 
 	
 	
