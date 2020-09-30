@@ -41,7 +41,7 @@ public class Jogo extends Jogador {
 				System.out.print(acertos[index] + " ");	
 				
 			}
-			System.out.println("\n( São " + getPalavra().length() +" letras - Você tem: " + this.getChances() + " chances )");
+			System.out.println("  ( São " + getPalavra().length() +" letras - Você tem: " + this.getChances() + " chances )");
 			if (palavra.indexOf(letra) == -1) {
 				setErros(getErros() + 1);
 				Boneco();
@@ -55,7 +55,7 @@ public class Jogo extends Jogador {
 			} 
 			
 			letrasUtilizadas += " " + getLetra() + " ";
-			System.out.println("\nLetras Utilizadas: " + getLetrasUtilizadas());
+			System.out.println("\n\nLetras Utilizadas: " + getLetrasUtilizadas());
 			
 		} 
 		
@@ -120,8 +120,9 @@ public class Jogo extends Jogador {
 		Scanner in = new Scanner(System.in);
 		System.out.print("Informe uma letra: ");
 		letra = in.next().toUpperCase().charAt(0); //UpperCase para colocar as letras em caixa alta, caso contrario, não identifica acerto se estiver em caixa baixa
-
+		System.out.println("\n");
 		return letra;
+		
 	}
 	
 	private String retornaResposta(boolean ganhou) {

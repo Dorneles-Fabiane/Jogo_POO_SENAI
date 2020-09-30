@@ -15,13 +15,12 @@ public class Main {
 		System.out.println("\t\t****** JOGO DA FORCA ******\n\n");
 		System.out.print("\nOlá, digite seu nome para começar: "); 
 		jogador.setNome(entrada.nextLine());
-		
 		System.out.println("Jogador: " + jogador.getNome());
+		System.out.println("\n");
 		
 		while(continua) {
 			
 			Jogo jogo = new Jogo();
-			
 			jogo.executar();
 			
 			System.out.println("\nQuer jogar novamente? S/N"); 
