@@ -26,22 +26,25 @@ public class Jogo extends Jogador {
 		for (int c= 0; c < getPalavra().length(); c++) {
 			acertos[c] = '_';
 			System.out.print(acertos[c] + " ");
-			} System.out.println("\n\n");
+			}
+			System.out.println("\n\n");
 		
 		
 		while (getChances() > 0) {
-		recebeletra();
-
+			recebeletra();
 			for (index = 0; index < getPalavra().length(); index++) {
 				if(palavra.charAt(index) == letra) {
 					acertos[index] = letra;
 					setAcertou(getAcertou() + 1);
 				} 
 			
-				System.out.print(acertos[index] + " ");				
+				System.out.print(acertos[index] + " ");	
 				
-			}	if (palavra.indexOf(letra) == -1) {
+			}
+			System.out.println("\n( São " + getPalavra().length() +" letras - Você tem: " + this.getChances() + " chances )");
+			if (palavra.indexOf(letra) == -1) {
 				setErros(getErros() + 1);
+				Boneco();
 				setChances(getChances() - 1);
 			}
 			
@@ -52,7 +55,6 @@ public class Jogo extends Jogador {
 			} 
 			
 			letrasUtilizadas += " " + getLetra() + " ";
-			System.out.println("   ( São " + getPalavra().length() +" letras - Você tem: " + this.getChances() + " chances )");
 			System.out.println("\nLetras Utilizadas: " + getLetrasUtilizadas());
 			
 		} 
@@ -61,6 +63,51 @@ public class Jogo extends Jogador {
 			System.out.println(retornaResposta(ganhou = false));
 		}	
 			
+	}
+	public void Boneco (){
+		if (getErros() == 1) {
+			System.out.print("\n");
+			System.out.println("          O          ");
+			System.out.print("\n");
+		} 
+		if (getErros() == 2) {
+			System.out.print("\n");
+			System.out.println("          O          ");
+			System.out.println("          |          ");
+			System.out.println("          |          ");
+			System.out.print("\n");
+		}
+		if (getErros() == 3) {
+			System.out.print("\n");
+			System.out.println("       ___O          ");
+			System.out.println("          |          ");
+			System.out.println("          |          ");
+			System.out.print("\n");
+		}
+		if (getErros() == 4) {
+			System.out.print("\n");
+			System.out.println("        __O__       ");
+			System.out.println("          |         ");
+			System.out.println("          |         ");
+			System.out.print("\n");
+			
+		}
+		if (getErros() == 5) {
+			System.out.print("\n");
+			System.out.println("        __O__       ");
+			System.out.println("          |         ");
+			System.out.println("          |         ");
+			System.out.println("         |          ");
+			System.out.print("\n");
+		}
+		if (getErros() == 6) {
+			System.out.print("\n");
+			System.out.println("        __O__        ");
+			System.out.println("          |          ");
+			System.out.println("          |          ");
+			System.out.println("         | |         ");
+			System.out.print("\n");
+		}
 	}
 
 	private String geraPalavra() {
