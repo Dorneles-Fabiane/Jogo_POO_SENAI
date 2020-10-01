@@ -8,31 +8,34 @@ public class Jogo extends Jogador {
 	//VARIAVEIS
 	private String[] palavras = {"AMOR", "CACHORRO", "CINEMA", "CASA", 
 			"ALGORITMO", "SABADO", "PIPA"};
-
-	private int index;
-	private char letra;
-	private String letrasUtilizadas = "";
-	private String palavra;
 	private char[] acertos;
-	private boolean ganhou;
+	private char letra;
+	private int index;
+	private String letrasUtilizadas = "";
 	private String resposta = "";
+	private String palavra;
+	private boolean ganhou;
+	
 	
 	//EXECUÇÃO
 	public void executar() {
        
 		palavra = geraPalavra();
 		acertos = new char [getPalavra().length()];
-	
+		
+		//Popula o array 'acertos' e faz a primeira impressão do número de letras na tela.
 		for (int c= 0; c < getPalavra().length(); c++) {
 			acertos[c] = '_';
 			System.out.print(acertos[c] + " ");
 			}
+		
 			System.out.println("\n\n");
 		
-		
-		while (getChances() > 0) {
-			recebeletra();
-			for (index = 0; index < getPalavra().length(); index++) {
+		while (getChances() > 0) { //Verifica se o jogador ainda possui chances.
+			recebeLetra();
+			
+			//Verifica se a letra existe no respectivo indice, caso exista faz a troca do ' _ ' pela letra informada.
+			for (index = 0; index < getPalavra().length(); index++) { 
 				if(palavra.charAt(index) == letra) {
 					acertos[index] = letra;
 					setAcertou(getAcertou() + 1);
@@ -41,11 +44,13 @@ public class Jogo extends Jogador {
 				System.out.print(acertos[index] + " ");	
 				
 			}
+			
 			System.out.println("  ( São " + getPalavra().length() +" letras - Você tem: " + this.getChances() + " chances )");
-			if (palavra.indexOf(letra) == -1) {
+			
+			if (palavra.indexOf(letra) == -1) { //Verifica se a letra existe na String, caso não exista, retorna '-1'.
 				setErros(getErros() + 1);
-				Boneco();
 				setChances(getChances() - 1);
+				Boneco();
 			}
 			
 			if (getAcertou() == palavra.length()) { //Se o número de acertos é igual ao numero de letras, ganha o jogo
@@ -64,51 +69,6 @@ public class Jogo extends Jogador {
 		}	
 			
 	}
-	public void Boneco (){
-		if (getErros() == 1) {
-			System.out.print("\n");
-			System.out.println("          O          ");
-			System.out.print("\n");
-		} 
-		if (getErros() == 2) {
-			System.out.print("\n");
-			System.out.println("          O          ");
-			System.out.println("          |          ");
-			System.out.println("          |          ");
-			System.out.print("\n");
-		}
-		if (getErros() == 3) {
-			System.out.print("\n");
-			System.out.println("       ___O          ");
-			System.out.println("          |          ");
-			System.out.println("          |          ");
-			System.out.print("\n");
-		}
-		if (getErros() == 4) {
-			System.out.print("\n");
-			System.out.println("        __O__       ");
-			System.out.println("          |         ");
-			System.out.println("          |         ");
-			System.out.print("\n");
-			
-		}
-		if (getErros() == 5) {
-			System.out.print("\n");
-			System.out.println("        __O__       ");
-			System.out.println("          |         ");
-			System.out.println("          |         ");
-			System.out.println("         |          ");
-			System.out.print("\n");
-		}
-		if (getErros() == 6) {
-			System.out.print("\n");
-			System.out.println("        __O__        ");
-			System.out.println("          |          ");
-			System.out.println("          |          ");
-			System.out.println("         | |         ");
-			System.out.print("\n");
-		}
-	}
 
 	private String geraPalavra() {
 		Random gerador = new Random();
@@ -116,7 +76,7 @@ public class Jogo extends Jogador {
 		return palavra;
 	}
 
-	private char recebeletra() {
+	private char recebeLetra() {
 		Scanner in = new Scanner(System.in);
 		System.out.print("Informe uma letra: ");
 		letra = in.next().toUpperCase().charAt(0); //UpperCase para colocar as letras em caixa alta, caso contrario, não identifica acerto se estiver em caixa baixa

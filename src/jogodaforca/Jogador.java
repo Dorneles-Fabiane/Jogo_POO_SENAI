@@ -7,6 +7,52 @@ public class Jogador extends Pessoa {
 	private int acertou = 0;
 	private int chances = 6;
 	
+	protected void Boneco (){
+		if (getErros() == 1) {
+			System.out.print("\n");
+			System.out.println("          O          ");
+			System.out.print("\n");
+		} 
+		if (getErros() == 2) {
+			System.out.print("\n");
+			System.out.println("          O          ");
+			System.out.println("          |          ");
+			System.out.println("          |          ");
+			System.out.print("\n");
+		}
+		if (getErros() == 3) {
+			System.out.print("\n");
+			System.out.println("       ___O          ");
+			System.out.println("          |          ");
+			System.out.println("          |          ");
+			System.out.print("\n");
+		}
+		if (getErros() == 4) {
+			System.out.print("\n");
+			System.out.println("        __O__       ");
+			System.out.println("          |         ");
+			System.out.println("          |         ");
+			System.out.print("\n");
+			
+		}
+		if (getErros() == 5) {
+			System.out.print("\n");
+			System.out.println("        __O__       ");
+			System.out.println("          |         ");
+			System.out.println("          |         ");
+			System.out.println("         |          ");
+			System.out.print("\n");
+		}
+		if (getErros() == 6) {
+			System.out.print("\n");
+			System.out.println("        __O__        ");
+			System.out.println("          |          ");
+			System.out.println("          |          ");
+			System.out.println("         | |         ");
+			System.out.print("\n");
+		}
+	}
+	
 	// METODOS ESPECIAIS
 	public int getErros() {
 		return erros;

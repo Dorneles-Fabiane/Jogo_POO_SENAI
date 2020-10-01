@@ -2,7 +2,7 @@ package jogodaforca;
 
 public class Pessoa {
 	
-	private String nome;
+	protected String nome;
 	
 	public String getNome() {
 		return nome;
