@@ -30,6 +30,8 @@ public class Jogo extends Jogador {
 			}
 		
 			System.out.println("\n\n");
+			
+			nChancesnLetras();
 		
 		while (getChances() > 0) { //Verifica se o jogador ainda possui chances.
 			recebeLetra();
@@ -42,16 +44,15 @@ public class Jogo extends Jogador {
 				} 
 			
 				System.out.print(acertos[index] + " ");	
-				
-			}
+			} 
 			
-			System.out.println("  ( São " + getPalavra().length() +" letras - Você tem: " + this.getChances() + " chances )");
+			System.out.print("\n\n");	
 			
 			if (palavra.indexOf(letra) == -1) { //Verifica se a letra existe na String, caso não exista, retorna '-1'.
 				setErros(getErros() + 1);
 				setChances(getChances() - 1);
 				Boneco();
-			}
+			} nChancesnLetras();
 			
 			if (getAcertou() == palavra.length()) { //Se o número de acertos é igual ao numero de letras, ganha o jogo
 				setGanhou(true);
@@ -60,7 +61,7 @@ public class Jogo extends Jogador {
 			} 
 			
 			letrasUtilizadas += " " + getLetra() + " ";
-			System.out.println("\n\nLetras Utilizadas: " + getLetrasUtilizadas());
+			System.out.println("Letras Utilizadas: " + getLetrasUtilizadas());
 			
 		} 
 		
@@ -83,6 +84,10 @@ public class Jogo extends Jogador {
 		System.out.println("\n");
 		return letra;
 		
+	}
+	
+	private void nChancesnLetras() {
+		System.out.println("   ( São " + getPalavra().length() +" letras - Você tem: " + this.getChances() + " chances )\n");
 	}
 	
 	private String retornaResposta(boolean ganhou) {
